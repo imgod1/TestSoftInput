@@ -27,14 +27,18 @@ public class MainActivity extends AppCompatActivity {
         act = this;
 
         edit = (EditText) this.findViewById(R.id.edit);
-        edit.setInputType(InputType.TYPE_NULL);
+
 
         edit1 = (EditText) this.findViewById(R.id.edit1);
+        edit.setInputType(InputType.TYPE_NULL);//先在获取焦点的edittext上禁用输入方式.这样就不会调起系统的输入法
 
         edit.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                int inputback = edit.getInputType();
+                edit.setInputType(InputType.TYPE_NULL);
                 new KeyboardUtil(act, ctx, edit).showKeyboard();
+                edit.setInputType(inputback);
                 return false;
             }
         });
