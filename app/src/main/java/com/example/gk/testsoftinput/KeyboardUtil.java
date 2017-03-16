@@ -30,9 +30,9 @@ public class KeyboardUtil {
         k1 = new Keyboard(ctx, R.xml.qwerty);
         k2 = new Keyboard(ctx, R.xml.symbols);
         keyboardView = (KeyboardView) act.findViewById(R.id.keyboard_view);
-        keyboardView.setKeyboard(k1);
+        keyboardView.setKeyboard(k1);//把键盘设置上去
         keyboardView.setEnabled(true);
-        keyboardView.setPreviewEnabled(true);
+        keyboardView.setPreviewEnabled(true);//显示预览小窗口
         keyboardView.setOnKeyboardActionListener(listener);
     }
 
