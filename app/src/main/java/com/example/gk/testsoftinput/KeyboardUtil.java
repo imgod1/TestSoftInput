@@ -128,17 +128,15 @@ public class KeyboardUtil {
     }
 
     public void showKeyboard() {
-        int visibility = keyboardView.getVisibility();
-        if (visibility == View.GONE || visibility == View.INVISIBLE) {
-            keyboardView.setVisibility(View.VISIBLE);
-        }
+        keyboardView.setVisibility(View.VISIBLE);
     }
 
     public void hideKeyboard() {
-        int visibility = keyboardView.getVisibility();
-        if (visibility == View.VISIBLE) {
-            keyboardView.setVisibility(View.INVISIBLE);
-        }
+        keyboardView.setVisibility(View.INVISIBLE);
+    }
+
+    public KeyboardView getKeyboardView() {
+        return keyboardView;
     }
 
     private boolean isword(String str) {
